@@ -30,9 +30,9 @@ export default class Displaying {
       }
     }
 
-    planets (x,y, imageClass, scale) { // drawing asteroids, planets, stars.
+    planets (x,y, currentObject, scale) { // drawing asteroids, planets, stars.
         this.img = new Image ();
-        this.img.src = imageClass;
+        this.img.src = currentObject;
         this.savePositioning(x, y);
         const positioningLenght = this.positioning.length;
         for (let i = 0; i < positioningLenght; i++) {  
@@ -43,14 +43,14 @@ export default class Displaying {
       }
     }
 
-    information (imageClass, width, height) { // out information on last create object
+    information (currentObject, width, height) { // out information on last create object
         this.context.font = "14px Gill Sans, sans-serif";
-        this.context.fillText("speed y : " + Math.ceil((imageClass.sy)*1000)/1000, width-200, height-15);
-        this.context.fillText("speed x : " + Math.ceil((imageClass.sx)*1000)/1000, width-350, height-15);
-        this.context.fillText("position y : " + Math.ceil((imageClass.y)*1000)/1000, width-500, height-15);
-        this.context.fillText("position x : " + Math.ceil((imageClass.x)*1000)/1000, width-650, height-15);
-        this.context.fillText("fixed : " + imageClass.fixed, width-750, height-15);
-        this.context.fillText("name : " + imageClass.name, width-925, height-15);
+        this.context.fillText("speed y : " + Math.ceil((currentObject.sy)*1000)/1000, width-200, height-15);
+        this.context.fillText("speed x : " + Math.ceil((currentObject.sx)*1000)/1000, width-350, height-15);
+        this.context.fillText("position y : " + Math.ceil((currentObject.y)*1000)/1000, width-500, height-15);
+        this.context.fillText("position x : " + Math.ceil((currentObject.x)*1000)/1000, width-650, height-15);
+        this.context.fillText("fixed : " + currentObject.fixed, width-750, height-15);
+        this.context.fillText("name : " + currentObject.name, width-925, height-15);
         this.context.fill();
     }     
 } 

@@ -1,21 +1,35 @@
+import Settings from "./settings.js"
+
 export function randomObject (sIndexKey) { // Random image for object
-  let imageLink = '';
+  const settings = new Settings();
+  const imagePlanetsPath = settings.imagePlanetsPath;
+  let imageLink;
+  let randomNumber;
   switch (sIndexKey) {
-    case 1:   imageLink = 'resources/images/01_asteroid.png';
+    case 1:   imageLink = imagePlanetsPath.asteroid[0];
               break;
     case 2: 
-              sIndexKey = Math.floor(Math.random() * 8) + 1;
-              imageLink = 'resources/images/02_planet_0' + sIndexKey + '.png';
+              randomNumber = Math.floor(Math.random() * (9 - 2) + 2);
+              if (randomNumber === 2) imageLink = imagePlanetsPath.jupiter[0];
+              if (randomNumber === 3) imageLink = imagePlanetsPath.earth[0];
+              if (randomNumber === 4) imageLink = imagePlanetsPath.mars[0];
+              if (randomNumber === 5) imageLink = imagePlanetsPath.mercury[0];
+              if (randomNumber === 6) imageLink = imagePlanetsPath.neptune[0];
+              if (randomNumber === 7) imageLink = imagePlanetsPath.saturn[0];
+              if (randomNumber === 8) imageLink = imagePlanetsPath.uranus[0];
+              if (randomNumber === 9) imageLink = imagePlanetsPath.venus[0];
               break;
     case 3:
-              sIndexKey = Math.floor(Math.random() * 3) + 1;
-              imageLink = 'resources/images/03_star_0' + sIndexKey + '.png';
+              randomNumber = Math.floor(Math.random() * (10 - 12) + 12);
+              if (randomNumber === 10) imageLink = imagePlanetsPath.sun[0];
+              if (randomNumber === 11) imageLink = imagePlanetsPath.redGiant[0];
+              if (randomNumber === 12) imageLink = imagePlanetsPath.blueSquenceStar[0];
               break;
     case 4:
-              imageLink = 'resources/images/04_black_hole.png';
+              imageLink = imagePlanetsPath.blackhole[0];
               break;                  
     default: 
-              imageLink = '';
+              imageLink = imagePlanetsPath.none[0];
   }
   return imageLink;
 }

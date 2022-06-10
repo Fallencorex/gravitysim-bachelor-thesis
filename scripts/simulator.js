@@ -24,7 +24,8 @@ const scaleElement = settings.scaleElement
 const clearElement = settings.clearUniverseElement;
 const width = (canvasElement.width = window.innerWidth);
 const height = (canvasElement.height = window.innerHeight);
-const imagePaths = settings.imagePaths;
+const imageInterfacePath = settings.imageInterfacePath;
+const imagePlanetsPath = settings.imagePlanetsPath;
 const numberScenes = ['first', 'second', 'third', 'fourth', 'fifth'];
 const typeScenes = [settings.scenesNone, settings.scenes1NewtonLaw, settings.scenesTwoObjects, settings.scenesNBodyProblem, settings.scenesSolarSystem];
 let fixed = settings.fixed;
@@ -78,33 +79,34 @@ canvasElement.addEventListener("mousemove", e => {
 canvasElement.addEventListener("mouseup", e => {
   const sIndexValue = objectElement.value;
   const sIndexKey = objectElement.selectedIndex;
-  const imageClass = randomObject(sIndexKey);
+  const resultPath = randomObject(sIndexKey);
   let objectName;
   let x = (mousePX - width / 2) / scale;
   let y = (mousePY - height / 2) / scale;
   let sx = (e.clientX - mousePX) / 100;
   let sy = (e.clientY - mousePY) / 100;
-  switch (imageClass) {
-    case imagePaths[0]: objectName = 'Asteroid'; break;
-    case imagePaths[1]: objectName = 'Mercury'; break;
-    case imagePaths[2]: objectName = 'Venus'; break;
-    case imagePaths[3]: objectName = 'Earth'; break;
-    case imagePaths[4]: objectName = 'Mars'; break;
-    case imagePaths[5]: objectName = 'Jupiter'; break;
-    case imagePaths[6]: objectName = 'Saturn'; break;
-    case imagePaths[7]: objectName = 'Uranus'; break;
-    case imagePaths[8]: objectName = 'Neptune'; break;
-    case imagePaths[9]: objectName = 'Sun'; break;
-    case imagePaths[10]: objectName = 'Blue squence star'; break;
-    case imagePaths[11]: objectName = 'Red Giant'; break;
-    case imagePaths[12]: objectName = 'Black Hole'; break;
-    default: objectName = 'None';
+  console.log(resultPath + ' ' + imagePlanetsPath.neptune[0])
+  switch (resultPath) {
+    case imagePlanetsPath.none[0] : objectName = imagePlanetsPath.none[1]; break;
+    case imagePlanetsPath.asteroid[0] : objectName = imagePlanetsPath.asteroid[1]; break;
+    case imagePlanetsPath.blueSquenceStar[0] : objectName = imagePlanetsPath.blueSquenceStar[1]; break;
+    case imagePlanetsPath.earth[0] : objectName = imagePlanetsPath.earth[1]; break;
+    case imagePlanetsPath.jupiter[0] : objectName = imagePlanetsPath.jupiter[1]; break;
+    case imagePlanetsPath.mars[0] : objectName = imagePlanetsPath.mars[1]; break;
+    case imagePlanetsPath.mercury[0] : objectName = imagePlanetsPath.mercury[1]; break;
+    case imagePlanetsPath.neptune[0] : objectName = imagePlanetsPath.neptune[1]; break;
+    case imagePlanetsPath.redGiant[0] : objectName = imagePlanetsPath.redGiant[1]; break;
+    case imagePlanetsPath.saturn[0] : objectName = imagePlanetsPath.saturn[1]; break;
+    case imagePlanetsPath.sun[0] : objectName = imagePlanetsPath.sun[1]; break;
+    case imagePlanetsPath.uranus[0] : objectName = imagePlanetsPath.uranus[1]; break;
+    case imagePlanetsPath.venus[0] : objectName = imagePlanetsPath.venus[1]; break;
   }
-  fixed = (fixedElement.checked) ? true : false;
+
+  fixed = (fixedElement.checked) ? true : false;  
 
   model.objects.push({
     name: objectName,
-    imageClass: imageClass,
+    imageClass: resultPath,
     fixed,
     m: parseFloat(sIndexValue),
     x,
@@ -138,7 +140,7 @@ scaleElement.addEventListener("change", function (e) {
 const rendering = () => {
 
   const renderImage = new Image();
-  renderImage.src = imagePaths[13];
+  renderImage.src = imageInterfacePath[0];
   canvasContext.drawImage(renderImage, 0, 0, width, height);
 
   model.acceleration();
@@ -176,7 +178,7 @@ const rendering = () => {
     objectI.Displaying.information(model.objects[objectLength - 1], width, height);
   }
   if (dragging) {
-    renderImage.src = imagePaths[14];
+    renderImage.src = imageInterfacePath[1];
     canvasContext.stroke();
     canvasContext.beginPath();
     canvasContext.arc(mousePX - 25, mousePY - 25, 1, 0, 2 * Math.PI);
