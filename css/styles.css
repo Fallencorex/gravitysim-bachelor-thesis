@@ -1,0 +1,187 @@
+html, body {
+    height: 100%;
+  }
+  
+body {
+    background: linear-gradient(rgb(25, 10, 95), rgb(0, 0, 25)) no-repeat;
+  }
+
+option, select {
+    color:rgb(255, 255, 255);
+    background: rgb(125, 125, 255);
+  }
+
+input[type=button]:active {
+    padding: 8px 20px;
+}
+
+input[type=range] {
+    position: relative;
+    top: -2px;
+    left: -2px;
+    overflow: hidden;
+    height: 10px;
+    -webkit-appearance: none;
+    background-color: #000000;
+    margin-top: -1px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 36px;
+  width: 3px;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+input[type=button] {
+  background-color:rgb(25, 0, 90);
+  border: 2px solid rgb(5, 0, 50);
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem; 
+  color: white;
+  font-weight: 900;
+  font-family: Gill Sans, sans-serif;
+  cursor: pointer;
+}
+
+input[type=radio] {
+	margin-right: 0;
+}
+
+.general {
+    width: 98%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(rgb(25, 0, 95), rgb(0, 10, 10)) no-repeat;
+    border: 6px double rgb(50, 25, 120); 
+    border-style: outset outset outset outset;
+    padding: 10px;
+   }
+
+.panelObjectsAndScenes {
+    text-align: center;
+    width:125px;
+    height:40px;
+    border: 6px double rgb(50, 25, 120); 
+    border-style: outset outset outset outset;
+    padding: 8px;
+}
+
+.panelFixed {
+    text-align: center;
+    width:225px;
+    height:40px;
+    padding: 8px;
+    font-size: 1rem;
+    font-weight: 900;
+    color: rgb(225, 225, 255);
+    font-family: Gill Sans, sans-serif
+}
+
+.panelTime {
+  text-align: center;
+  width:225px;
+  height:40px;
+  border: 6px double rgb(50, 25, 120); 
+  border-style: outset outset outset outset;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(225, 225, 255);
+  font-family: Gill Sans, sans-serif
+}
+
+.panelGravity {
+  text-align: center;
+  width:225px;
+  height:40px;
+  border: 6px double rgb(50, 25, 120); 
+  border-style: outset outset outset outset;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(225, 225, 255);
+  font-family: Gill Sans, sans-serif
+}
+
+.panelPaths {
+  text-align: left;
+  width:105px;
+  height:40px;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(225, 225, 255);
+  font-family: Gill Sans, sans-serif
+}
+
+.panelScale {
+  position: relative;
+  text-align: left;
+  width:100px;
+  height:40px;
+  padding: 4px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(225, 225, 255);
+  font-family: Gill Sans, sans-serif
+}
+
+.panelClear {
+  text-align: center;
+  width:150px;
+  height:40px;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgb(225, 225, 255);
+  font-family: Gill Sans, sans-serif
+}
+
+.info {
+    font-size: 0.5rem;
+    font-weight: 900;
+    color: rgb(225, 225, 255);
+    font-family: Gill Sans, sans-serif
+}
+
+.panelBorder {
+  width:100px;
+  height:50px;
+  background-color:rgb(30, 0, 75);
+  border: 10px double rgb(50, 25, 120); 
+  border-style: outset outset outset outset;
+  padding: 8px;
+}
+
+#fixed {
+  transform:scale(1.2);
+}
+
+#simulatedSpace {
+  width:1505px;
+  height:550px;
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(rgb(25, 0, 95), rgb(0, 10, 10)) no-repeat;
+  border: 6px double rgb(50, 25, 120); 
+  border-style: outset outset outset outset;
+}
+
+.logo {
+  position: relative;
+  top: -15px;
+  left: 15px;
+}
+
+
+
+
+
+
+
