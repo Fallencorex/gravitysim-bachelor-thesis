@@ -36,6 +36,9 @@ let mouseX = settings.mouseX;
 let mouseY = settings.mouseY;
 let dragging = settings.dragging;
 
+// Scrolling ban
+document.body.style.overflow = "hidden";
+
 //---------------------------------------------------------------------------------------//
 
 

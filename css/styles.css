@@ -151,7 +151,7 @@ input[type=radio] {
 }
 
 .panelBorder {
-  width:100px;
+  width:200px;
   height:50px;
   background-color:rgb(30, 0, 75);
   border: 10px double rgb(50, 25, 120); 
@@ -164,8 +164,8 @@ input[type=radio] {
 }
 
 #simulatedSpace {
-  width:1505px;
-  height:550px;
+  width:1605px;
+  height:600px;
   display: flex;
   flex-wrap: wrap;
   background: linear-gradient(rgb(25, 0, 95), rgb(0, 10, 10)) no-repeat;
@@ -176,7 +176,7 @@ input[type=radio] {
 .logo {
   position: relative;
   top: -15px;
-  left: 15px;
+  left: 60px;
 }
 
 
